@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="hackathon@welham — 36-Hour Inter-School DevTools Engineering Evaluation Environment." />
+    <meta name="theme-color" content="#0E1116" />
+
+    <title>hackathon@welham | Engineering Runtime</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Core -->
+    <link rel="stylesheet" href="./styles/core/reset.css" />
+    <link rel="stylesheet" href="./styles/core/tokens.css" />
+    <link rel="stylesheet" href="./styles/core/base.css" />
+
+    <!-- Layout -->
+    <link rel="stylesheet" href="./styles/layout/shell.css" />
+    <link rel="stylesheet" href="./styles/layout/grid.css" />
+    <link rel="stylesheet" href="./styles/layout/responsive.css" />
+
+    <!-- Components -->
+    <link rel="stylesheet" href="./styles/components/topbar.css" />
+    <link rel="stylesheet" href="./styles/components/sidebar.css" />
+    <link rel="stylesheet" href="./styles/components/panels.css" />
+    <link rel="stylesheet" href="./styles/components/tables.css" />
+    <link rel="stylesheet" href="./styles/components/checklist.css" />
+    <link rel="stylesheet" href="./styles/components/pipeline.css" />
+    <link rel="stylesheet" href="./styles/components/statusbar.css" />
+    <link rel="stylesheet" href="./styles/components/paletes.css" />
+
+
+    <!-- Utilities -->
+    <link rel="stylesheet" href="./styles/utilities.css" />
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- BOOT SEQUENCE OVERLAY -->
+    <!-- ===================================== -->
+
+    <div id="boot-screen" class="boot">
+        <div class="boot__content mono">
+            <pre>
+Initializing hackathon@welham runtime...
+Loading evaluation model...
+AI enforcement protocol: ACTIVE
+Repository audit engine: READY
+Lifecycle pipeline: CONFIGURED
+-----------------------------------------
+SYSTEM STATUS: READY
+</pre>
+        </div>
+    </div>
+
+    <!-- ===================================== -->
+    <!-- SYSTEM SHELL -->
+    <!-- ===================================== -->
+
+    <div class="shell">
+
+        <!-- ================================= -->
+        <!-- TOP SYSTEM BAR -->
+        <!-- ================================= -->
+
+        <header class="topbar">
+            <div class="topbar__left mono">
+                <div class="topbar__left mono">
+                    <img src="./assets/icons/branch.svg" alt="" class="icon" />
+                    <span>branch: main</span>
+                    <span class="divider">|</span>
+                    <span id="commit-hash">commit: ----</span>
+                    <span class="divider">|</span>
+                    <span>mode: ENGINEERING_EVALUATION</span>
+                </div>
+
+            </div>
+
+            <div class="topbar__right mono">
+                <span class="status-led"></span>
+                <span id="runtime-clock">00:00:00</span>
+                <span class="divider">|</span>
+                <span>HACKATHON@WELHAM</span>
+            </div>
+
+        </header>
+
+        <!-- ================================= -->
+        <!-- WORKSPACE -->
+        <!-- ================================= -->
+
+        <div class="workspace">
+
+            <!-- ============================= -->
+            <!-- SIDEBAR NAVIGATION TREE -->
+            <!-- ============================= -->
+
+            <aside class="sidebar mono">
+
+                <div class="sidebar__section">
+                    <div class="sidebar__title">/core</div>
+                    <button data-route="identity" class="sidebar__item">identity</button>
+                    <button data-route="lifecycle" class="sidebar__item">lifecycle</button>
+                    <button data-route="deliverables" class="sidebar__item">deliverables</button>
+                    <button data-route="judging" class="sidebar__item">judging</button>
+                    <!-- <button data-route="anti-ai" class="sidebar__item">anti_ai</button> -->
+                </div>
+
+                <div class="sidebar__section">
+                    <div class="sidebar__title">/engagement</div>
+                    <button data-route="workshops" class="sidebar__item">workshops</button>
+                    <button data-route="mini-events" class="sidebar__item">mini_events</button>
+                    <button data-route="communication" class="sidebar__item">communication</button>
+                    <!-- <button data-route="risk" class="sidebar__item">risk_model</button> -->
+                </div>
+
+                <div class="sidebar__section">
+                    <div class="sidebar__title">/institution</div>
+                    <button data-route="institution" class="sidebar__item">about_school</button>
+                    <button data-route="hosts" class="sidebar__item">hosts</button>
+                </div>
+
+                <div class="sidebar__section">
+                    <div class="sidebar__title">/action</div>
+                    <button data-route="register" class="sidebar__item sidebar__item--highlight">
+                        register
+                    </button>
+                </div>
+
+            </aside>
+
+            <!-- ============================= -->
+            <!-- MAIN VIEW PANEL -->
+            <!-- ============================= -->
+
+            <main id="view-root" class="main-panel">
+
+                <!-- Dynamic View Injection -->
+                <!-- Router will inject view content here -->
+
+            </main>
+
+        </div>
+
+        <!-- ================================= -->
+        <!-- STATUS BAR -->
+        <!-- ================================= -->
+
+        <!-- <footer class="statusbar mono">
+            <div class="statusbar__left">
+                <span>hackathon@welham</span>
+                <span class="divider">|</span>
+                <span>36H_RUNTIME</span>
+            </div>
+
+            <div class="statusbar__right">
+                <span>MAX_TEAMS_PER_SCHOOL: 2</span>
+                <span class="divider">|</span>
+                <span>MAX_TEAM_SIZE: 4</span>
+            </div>
+        </footer>
+
+    </div> -->
+
+    <!-- COMMAND PALETTE -->
+    <div id="command-palette" class="palette hidden">
+        <div class="palette__panel">
+            <input id="palette-input" class="palette__input mono" type="text" placeholder="Type a route…"
+                autocomplete="off" />
+            <div id="palette-results" class="palette__results"></div>
+        </div>
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- SCRIPTS -->
+    <!-- ===================================== -->
+
+    <script type="module" src="./scripts/main.js" defer></script>
+
+</body>
+
+</html>

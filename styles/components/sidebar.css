@@ -1,0 +1,99 @@
+/* ===================================== */
+/* SIDEBAR COMPONENT */
+/* ===================================== */
+
+.sidebar {
+  font-size: var(--text-sm);
+  line-height: var(--line-normal);
+}
+
+/* ------------------------------------- */
+/* SECTION GROUP */
+/* ------------------------------------- */
+
+.sidebar__section {
+  margin-bottom: var(--space-5);
+}
+
+.sidebar__title {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+/* ------------------------------------- */
+/* NAV ITEMS */
+/* ------------------------------------- */
+
+.sidebar__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  background: transparent;
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+/* Indentation effect */
+.sidebar__item::before {
+  content: "›";
+  margin-right: var(--space-2);
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Hover */
+.sidebar__item:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+/* Active Route */
+.sidebar__item.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Highlight Action */
+.sidebar__item--highlight {
+  border: 1px solid var(--border-strong);
+  margin-top: var(--space-2);
+}
+
+/* Scroll polish */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+.sidebar__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-2) var(--space-2);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+
+.sidebar__item:hover {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-primary);
+}
+
+.sidebar__item.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}

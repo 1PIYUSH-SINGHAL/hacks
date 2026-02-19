@@ -1,0 +1,50 @@
+/* ===================================== */
+/* COMMAND PALETTE */
+/* ===================================== */
+
+.palette {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  z-index: 2000;
+}
+
+.palette__panel {
+  width: 500px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.palette__input {
+  width: 100%;
+  padding: var(--space-3);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+}
+
+.palette__results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.palette__item {
+  padding: var(--space-3);
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.palette__item:hover,
+.palette__item.is-active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}

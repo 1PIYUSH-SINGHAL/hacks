@@ -1,0 +1,65 @@
+:root {
+
+  /* ============================= */
+  /* COLOR SYSTEM (HARDENED) */
+  /* ============================= */
+
+  --bg-primary: #0B0F14;
+  --bg-secondary: #11161D;
+  --bg-elevated: #161C24;
+
+  --text-primary: #E5E9F0;
+  --text-secondary: #9AA4B2;
+  --text-muted: #6B7280;
+
+  --accent: #4C8BF5;
+  --accent-soft: rgba(76, 139, 245, 0.12);
+
+  --danger: #E5484D;
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-strong: rgba(255, 255, 255, 0.12);
+
+  /* ============================= */
+  /* TYPOGRAPHY */
+  /* ============================= */
+
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-base: 0.95rem;
+  --text-lg: 1.2rem;
+
+  --line-tight: 1.25;
+  --line-normal: 1.55;
+
+  /* ============================= */
+  /* SPACING (TIGHTENED) */
+  /* ============================= */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 14px;
+  --space-4: 20px;
+  --space-5: 28px;
+  --space-6: 40px;
+  --space-7: 56px;
+  --space-8: 80px;
+
+  /* ============================= */
+  /* RADIUS (REDUCED) */
+  /* ============================= */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* ============================= */
+  /* MOTION */
+  /* ============================= */
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 160ms;
+}

@@ -1,0 +1,60 @@
+/* ===================================== */
+/* TOPBAR SYSTEM HEADER */
+/* ===================================== */
+
+.topbar {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+/* ------------------------------------- */
+/* LEFT & RIGHT GROUPS */
+/* ------------------------------------- */
+
+.topbar__left,
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ------------------------------------- */
+/* DIVIDER */
+/* ------------------------------------- */
+
+.divider {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ------------------------------------- */
+/* ICON */
+/* ------------------------------------- */
+
+.icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+}
+
+/* ------------------------------------- */
+/* STATUS EMPHASIS */
+/* ------------------------------------- */
+
+.topbar__right span:first-child {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.topbar__right span:last-child {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.status-led {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(34,197,94,0.6);
+}

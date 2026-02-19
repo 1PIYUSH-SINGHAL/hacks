@@ -1,0 +1,76 @@
+/* ===================================== */
+/* TECHNICAL TABLE SYSTEM */
+/* ===================================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.table thead {
+  background: var(--bg-elevated);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.table th {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.table td {
+  color: var(--text-secondary);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ------------------------------------- */
+/* SCORE COLUMN */
+/* ------------------------------------- */
+
+.table__score {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ------------------------------------- */
+/* WEIGHT BAR */
+/* ------------------------------------- */
+
+.weight-bar {
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: var(--space-2);
+}
+
+.weight-bar__fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0;
+}
+
+/* ------------------------------------- */
+/* MATRIX STYLE (Dense Variant) */
+/* ------------------------------------- */
+
+.table--dense th,
+.table--dense td {
+  padding: var(--space-2);
+  font-size: var(--text-xs);
+}

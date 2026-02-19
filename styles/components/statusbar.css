@@ -1,0 +1,40 @@
+/* ===================================== */
+/* STATUS BAR */
+/* ===================================== */
+
+.statusbar {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  font-size: var(--text-xs);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 6px 16px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+
+  min-height: 32px;
+  padding-bottom: calc(36px + var(--space-4));
+}
+
+.statusbar__left,
+.statusbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.statusbar .divider {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.statusbar__right span {
+  color: var(--text-secondary);
+}
+
+.statusbar__right span:first-child {
+  font-weight: 500;
+}

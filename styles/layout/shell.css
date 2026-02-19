@@ -1,0 +1,92 @@
+/* ===================================== */
+/* SYSTEM SHELL LAYOUT */
+/* ===================================== */
+
+.shell {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 44px 1fr;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* ===================================== */
+/* TOPBAR */
+/* ===================================== */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  font-size: var(--text-sm);
+}
+
+/* ===================================== */
+/* WORKSPACE AREA */
+/* ===================================== */
+
+.workspace {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  overflow: hidden;
+}
+
+/* ===================================== */
+/* SIDEBAR */
+/* ===================================== */
+
+.sidebar {
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  padding: var(--space-4) var(--space-3);
+}
+
+/* ===================================== */
+/* MAIN PANEL */
+/* ===================================== */
+
+.main-panel {
+  height: 100%;
+  overflow-y: auto;
+  padding: var(--space-1);
+  background: var(--bg-primary);
+}
+
+/* ===================================== */
+/* STATUS BAR */
+/* ===================================== */
+
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  font-size: var(--text-xs);
+}
+
+/* ===================================== */
+/* BOOT SCREEN */
+/* ===================================== */
+
+.boot {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.boot__content {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-align: left;
+}
