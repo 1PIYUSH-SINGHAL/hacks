@@ -1,8 +1,29 @@
 /* ===================================== */
-/* MOBILE MODE */
+/* LARGE DESKTOP (≥ 1400px) */
 /* ===================================== */
 
-@media (max-width: 1024px) {
+@media (min-width: 1400px) {
+  .main-panel {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+}
+
+/* ===================================== */
+/* TABLET LANDSCAPE (≤ 1199px) */
+/* ===================================== */
+
+@media (max-width: 1199px) {
+  .main-panel {
+    padding: var(--space-5);
+  }
+}
+
+/* ===================================== */
+/* TABLET PORTRAIT (≤ 900px) */
+/* ===================================== */
+
+@media (max-width: 900px) {
 
   .workspace {
     grid-template-columns: 1fr;
@@ -11,38 +32,120 @@
   .sidebar {
     position: fixed;
     top: 44px;
-    bottom: 28px;
-    left: -260px;
+    left: 0;
+    height: calc(100vh - 44px);
     width: 260px;
-    transition: left var(--duration-normal) var(--ease-standard);
-    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 200ms var(--ease-standard);
+    z-index: 60;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-subtle);
   }
 
   .sidebar.is-open {
-    left: 0;
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(2px);
+    z-index: 50;
   }
 
   .main-panel {
     padding: var(--space-4);
   }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
 }
 
-/* ------------------------------------- */
-/* SMALL DEVICES */
-/* ------------------------------------- */
+/* ===================================== */
+/* MOBILE (≤ 600px) */
+/* ===================================== */
 
 @media (max-width: 600px) {
 
-  .view {
-    gap: var(--space-5);
+  .main-panel {
+    padding: var(--space-3);
+  }
+
+  .view__title {
+    font-size: var(--text-md);
+  }
+
+  .view__meta {
+    font-size: var(--text-xs);
+  }
+
+  .block {
+    padding: var(--space-3);
   }
 
   .pipeline {
-    flex-direction: column !important;
+    gap: var(--space-4);
   }
 
-  .spec-grid {
-    grid-template-columns: 1fr;
+  .pipeline__phase {
+    padding: var(--space-3);
   }
 
+  .spec__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .checklist__item {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .checklist__marker {
+    font-size: var(--text-xs);
+  }
+
+  .dense-list__item {
+    font-size: var(--text-xs);
+  }
+
+  .table {
+    font-size: var(--text-xs);
+  }
+}
+
+/* ===================================== */
+/* SMALL MOBILE (≤ 420px) */
+/* ===================================== */
+
+@media (max-width: 420px) {
+
+  .main-panel {
+    padding: var(--space-2);
+  }
+
+  .block {
+    padding: var(--space-2);
+  }
+
+  .view__divider {
+    font-size: 10px;
+    overflow-x: hidden;
+  }
+
+  .pipeline__title {
+    font-size: var(--text-xs);
+  }
+
+  .topbar {
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+
+  .topbar__menu {
+    font-size: 16px;
+  }
 }

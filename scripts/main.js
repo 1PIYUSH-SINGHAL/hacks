@@ -16,6 +16,33 @@ function hideBootScreen() {
   }, 300);
 }
 
+function initSidebarToggle() {
+  const toggle = document.getElementById("sidebar-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  const backdrop = document.getElementById("sidebar-backdrop");
+
+  if (!toggle || !sidebar || !backdrop) return;
+
+  function open() {
+    sidebar.classList.add("is-open");
+    backdrop.classList.remove("hidden");
+  }
+
+  function close() {
+    sidebar.classList.remove("is-open");
+    backdrop.classList.add("hidden");
+  }
+
+  toggle.addEventListener("click", open);
+  backdrop.addEventListener("click", close);
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".sidebar__item")) {
+      close();
+    }
+  });
+}
+
 function init() {
   if (initialized) return;
   initialized = true;
@@ -23,6 +50,7 @@ function init() {
   initRouter();
   initRuntime();
   initPalette();
+  initSidebarToggle();
 
   requestAnimationFrame(() => {
     hideBootScreen();

@@ -73,6 +73,10 @@ SYSTEM STATUS: READY
         <!-- ================================= -->
 
         <header class="topbar">
+            <button class="topbar__menu" id="sidebar-toggle">
+                ☰
+            </button>
+
             <div class="topbar__left mono">
                 <div class="topbar__left mono">
                     <img src="./assets/icons/branch.svg" alt="" class="icon" />
@@ -103,6 +107,8 @@ SYSTEM STATUS: READY
             <!-- ============================= -->
             <!-- SIDEBAR NAVIGATION TREE -->
             <!-- ============================= -->
+
+            <div id="sidebar-backdrop" class="sidebar-backdrop hidden"></div>
 
             <aside class="sidebar mono">
 
@@ -171,21 +177,21 @@ SYSTEM STATUS: READY
 
     </div> -->
 
-    <!-- COMMAND PALETTE -->
-    <div id="command-palette" class="palette hidden">
-        <div class="palette__panel">
-            <input id="palette-input" class="palette__input mono" type="text" placeholder="Type a route…"
-                autocomplete="off" />
-            <div id="palette-results" class="palette__results"></div>
+        <!-- COMMAND PALETTE -->
+        <div id="command-palette" class="palette hidden">
+            <div class="palette__panel">
+                <input id="palette-input" class="palette__input mono" type="text" placeholder="Type a route…"
+                    autocomplete="off" />
+                <div id="palette-results" class="palette__results"></div>
+            </div>
         </div>
-    </div>
 
 
-    <!-- ===================================== -->
-    <!-- SCRIPTS -->
-    <!-- ===================================== -->
+        <!-- ===================================== -->
+        <!-- SCRIPTS -->
+        <!-- ===================================== -->
 
-    <script type="module" src="./scripts/main.js" defer></script>
+        <script type="module" src="./scripts/main.js" defer></script>
 
 </body>
 
