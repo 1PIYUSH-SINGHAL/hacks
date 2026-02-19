@@ -1,27 +1,83 @@
-/* ===================================== */
-/* LARGE DESKTOP (≥ 1400px) */
-/* ===================================== */
+/* ===================================================== */
+/* GLOBAL SAFETY FIXES (Prevents Clipping / Overflow)   */
+/* ===================================================== */
+
+.view,
+.block,
+.pipeline,
+.spec,
+.checklist,
+.dense-list {
+  width: 100%;
+  max-width: 100%;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.main-panel {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+
+/* ===================================================== */
+/* LARGE DESKTOP (≥ 1400px)                              */
+/* ===================================================== */
 
 @media (min-width: 1400px) {
+
   .main-panel {
     padding-left: 96px;
     padding-right: 96px;
   }
+
 }
 
-/* ===================================== */
-/* TABLET LANDSCAPE (≤ 1199px) */
-/* ===================================== */
+
+/* ===================================================== */
+/* DESKTOP (1200px – 1399px)                             */
+/* ===================================================== */
+
+@media (max-width: 1399px) {
+
+  .main-panel {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+
+}
+
+
+/* ===================================================== */
+/* TABLET LANDSCAPE (≤ 1199px)                           */
+/* ===================================================== */
 
 @media (max-width: 1199px) {
+
   .main-panel {
     padding: var(--space-5);
   }
+
 }
 
-/* ===================================== */
-/* TABLET PORTRAIT (≤ 900px) */
-/* ===================================== */
+
+/* ===================================================== */
+/* TABLET PORTRAIT (≤ 900px)                             */
+/* ===================================================== */
 
 @media (max-width: 900px) {
 
@@ -49,7 +105,7 @@
   .sidebar-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(2px);
     z-index: 50;
   }
@@ -58,14 +114,16 @@
     padding: var(--space-4);
   }
 
-  .table-wrapper {
-    overflow-x: auto;
+  .pipeline {
+    gap: var(--space-5);
   }
+
 }
 
-/* ===================================== */
-/* MOBILE (≤ 600px) */
-/* ===================================== */
+
+/* ===================================================== */
+/* MOBILE (≤ 600px)                                      */
+/* ===================================================== */
 
 @media (max-width: 600px) {
 
@@ -85,10 +143,6 @@
     padding: var(--space-3);
   }
 
-  .pipeline {
-    gap: var(--space-4);
-  }
-
   .pipeline__phase {
     padding: var(--space-3);
   }
@@ -101,11 +155,8 @@
 
   .checklist__item {
     flex-direction: column;
+    align-items: flex-start;
     gap: 6px;
-  }
-
-  .checklist__marker {
-    font-size: var(--text-xs);
   }
 
   .dense-list__item {
@@ -113,13 +164,20 @@
   }
 
   .table {
-    font-size: var(--text-xs);
+    font-size: 12px;
   }
+
+  .table th,
+  .table td {
+    padding: 8px;
+  }
+
 }
 
-/* ===================================== */
-/* SMALL MOBILE (≤ 420px) */
-/* ===================================== */
+
+/* ===================================================== */
+/* SMALL MOBILE (≤ 420px)                                */
+/* ===================================================== */
 
 @media (max-width: 420px) {
 
@@ -131,13 +189,18 @@
     padding: var(--space-2);
   }
 
-  .view__divider {
-    font-size: 10px;
-    overflow-x: hidden;
+  .view__title {
+    font-size: var(--text-sm);
   }
 
   .pipeline__title {
     font-size: var(--text-xs);
+  }
+
+  .view__divider {
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .topbar {
@@ -145,7 +208,31 @@
     padding-right: var(--space-2);
   }
 
-  .topbar__menu {
-    font-size: 16px;
+}
+
+
+/* ===================================================== */
+/* ULTRA SMALL DEVICES (≤ 360px)                         */
+/* ===================================================== */
+
+@media (max-width: 360px) {
+
+  .main-panel {
+    padding: 10px;
   }
+
+  .block {
+    padding: 10px;
+  }
+
+  .view__title {
+    font-size: 14px;
+  }
+
+  .dense-list__item,
+  .checklist__item,
+  .spec__row {
+    font-size: 12px;
+  }
+
 }
